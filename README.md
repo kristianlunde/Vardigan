@@ -11,11 +11,12 @@ This repository contains provision bash scripts. Each script can be used as a st
 
 **Vagrant**
 
-````bash
+```bash
 #Install pdflib 8.0.6
 config.vm.provision "shell", path: "scripts/pdflib.sh", args: ["8.0.6"] 
 #or install pdflib 9.0.2
 config.vm.provision "shell", path: "scripts/pdflib.sh"
+````
 
 **Standalone**
 
@@ -23,7 +24,7 @@ config.vm.provision "shell", path: "scripts/pdflib.sh"
 #Install pdflib 8.0.6
 $ ./scripts/pdflib.sh 8.0.6 
 
-````bash
+
 #Install pdflib 9.0.2
 $ ./scripts/pdflib.sh
-
+```
