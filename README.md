@@ -9,6 +9,8 @@ This repository contains provision bash scripts. Each script can be used as a st
 
 ### pdflib
 
+The pdflib script installs pdflib for PHP. Both Pdflib 8.0.6 and 9.0.2 are supported for PHP 5.3.x, 5.4.x and 5.5.x. This installer also support both 32 and 64bit systems. 
+'
 **Vagrant**
 
 ```bash
