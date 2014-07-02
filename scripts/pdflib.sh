@@ -74,7 +74,19 @@ if [ ! -d "./pdflib" ]; then
 	mkdir pdflib
 fi
 
+#tar xvf PDFlib-8.0.6-Linux-php.tar.gz
+#tar xvf PDFlib-8.0.6-Linux-x86_64-php.tar.gz
+#cp PDFlib-8.0.6-Linux-php/bind/php/php-530/libpdf_php.so /usr/lib/php5/20090626+lfs/
+#cp PDFlib-8.0.6-Linux-x86_64-php/bind/php/php-530/libpdf_php.so /usr/lib/php5/20090626/
+#echo "extension=libpdf_php.so" > /etc/php5/conf.d/libpdf.ini
+
 tar zxf pdflib.tar.gz -C ./pdflib --strip-components 1
+
+if [ $pdflib_version = "9" ]; then
+	php_so_file="php_pdflib.so" 
+else
+	php_so_file="libpdf_php.so"
+fi
 
 if [ $php_version = "5.3" ]; then
 	php_pdflib_dir="php-530";
@@ -84,7 +96,7 @@ else
 	php_pdflib_dir="php-550";
 fi
 
-cp ./pdflib/bind/php/$php_pdflib_dir/php_pdflib.so $php_extension_dir
+cp ./pdflib/bind/php/$php_pdflib_dir/$php_so_file $php_extension_dir
 
 ini_file="$php_ini_dir/pdflib.ini"
 if [ ! -f $ini_file ]; then
