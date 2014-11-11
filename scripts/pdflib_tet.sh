@@ -71,7 +71,7 @@ else
 	php_tet_dir="php-560";
 fi
 
-cp ./pdflib/bind/php/$php_tet_dir/$php_so_file $php_extension_dir
+cp ./pdflib_TET/bind/php/$php_tet_dir/$php_so_file $php_extension_dir
 
 ini_file="$php_ini_dir/pdflib_tet.ini"
 if [ ! -f $ini_file ]; then
